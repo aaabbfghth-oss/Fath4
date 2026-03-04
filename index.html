@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramadan tournement </title>
+<title>Ramadan Tournament</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
 
 <style>
-/* ================= LALIGA OFFICIAL THEME ================= */
 :root {
   --bg: #111111; 
   --card: #1f1f1f;
   --card-border: #333333;
   --text: #ffffff;
   --text-muted: #a0a0a0;
-  --accent: #FF4B44; /* Official LaLiga Coral */
+  --accent: #FF4B44;
   --row-hover: #2a2a2a;
   --blue-stat: #0045A5;
 }
@@ -42,18 +41,10 @@ body.light {
 body {
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
-}
-
-/* Animations */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 section {
   padding: 40px 20px;
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .container {
@@ -61,208 +52,100 @@ section {
   margin: auto;
 }
 
-/* LaLiga Style Headings */
 .title {
-  text-align: left;
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 25px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -0.5px;
-  font-style: italic;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .title::before {
   content: '';
-  display: block;
   width: 8px;
-  height: 35px;
-  background-color: var(--accent);
+  height: 30px;
+  background: var(--accent);
   transform: skewX(-15deg);
 }
 
-/* Toggle Btn */
 .toggle-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border: 2px solid var(--card-border);
   background: var(--card);
   color: var(--text);
   cursor: pointer;
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  z-index: 1000;
-  border-radius: 4px;
 }
 
-/* Cards & Tables */
 .main-match-card, .table-wrapper, .leader-card, .match-card {
   background: var(--card);
   border: 1px solid var(--card-border);
 }
 
-/* Featured Match */
 .main-match-card {
-  padding: 50px 40px;
+  padding: 40px;
   text-align: center;
 }
 
 .teams-hero {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 
 .vs-badge {
   color: var(--accent);
-  font-size: 1.5rem;
   font-weight: 800;
-  font-style: italic;
 }
 
-/* Leaders Section */
-.leaders-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.leader-card:hover {
-  border-color: var(--accent);
-}
-
-.leader-hero {
-  padding: 30px;
-  border-bottom: 1px solid var(--card-border);
-  background: linear-gradient(135deg, var(--card) 60%, rgba(0, 69, 165, 0.05) 100%);
-}
-
-.big-stat {
-  font-size: 5.5rem;
-  font-weight: 800;
-  color: var(--blue-stat);
-  line-height: 0.8;
-  margin-bottom: 5px;
-}
-
-.stat-label {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 5px;
-}
-
-.rank-text {
-  color: var(--blue-stat);
-  font-weight: 800;
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-.player-name-hero {
-  font-size: 2.2rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.rank-list { list-style: none; }
-
-.rank-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px;
-  border-bottom: 1px solid var(--card-border);
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.rank-item:nth-child(even) { background: rgba(255,255,255,0.03); }
-body.light .rank-item:nth-child(even) { background: rgba(0,0,0,0.02); }
-
-.footer-link {
-  display: block;
-  padding: 15px;
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-decoration: none;
+th, td {
+  padding: 16px;
   text-align: center;
 }
-.footer-link:hover {
-  background: var(--accent);
-  color: #fff;
+
+th {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--card-border);
 }
 
-/* Standings Table */
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 18px; text-align: center; }
-th { text-transform: uppercase; font-size: 0.8rem; color: var(--text-muted); border-bottom: 2px solid var(--card-border); }
-tbody tr:first-child td:first-child { background: var(--accent); color: white; }
+tbody tr:first-child td:first-child {
+  background: var(--accent);
+  color: white;
+  font-weight: 800;
+}
 
-/* Fixtures Grid */
+tbody tr:hover {
+  background: var(--row-hover);
+}
+
 .matches-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .match-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.match-top {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.teams { 
-  padding: 30px 20px; 
-  text-align: center; 
-  font-weight: 800; 
-  text-transform: uppercase; 
-  flex-grow: 1;
-}
-
-.footer-btn {
-  border-top: 1px solid var(--card-border);
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  cursor: pointer;
 }
-
-.match-card:hover .footer-btn { background: var(--accent); color: white; }
 
 .main-footer {
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   color: var(--text-muted);
   font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
   border-top: 1px solid var(--card-border);
   margin-top: 40px;
 }
@@ -273,120 +156,91 @@ tbody tr:first-child td:first-child { background: var(--accent); color: white; }
 
 <button class="toggle-btn" onclick="toggleTheme()">Switch Mode</button>
 
-<section style="animation-delay: 0.1s;">
+<section>
   <div class="container">
     <h2 class="title">Featured</h2>
     <div class="main-match-card">
       <div class="teams-hero">
         NASSS RAJA <span class="vs-badge">VS</span> RAJA FC
       </div>
-      <p style="margin-top: 15px; font-weight: 700; color: var(--text-muted);">SAT 28 FEB 2026 – 21:00</p>
+      <p style="margin-top:10px;color:var(--text-muted);font-weight:600;">
+        SAT 28 FEB 2026 – 21:00
+      </p>
     </div>
   </div>
 </section>
 
-<section style="animation-delay: 0.2s;">
+<section>
   <div class="container">
     <h2 class="title">Standings</h2>
     <div class="table-wrapper">
       <table>
         <thead>
-          <tr><th>Pos</th><th>Club</th><th>Played</th><th>Points</th></tr>
+          <tr>
+            <th>Pos</th>
+            <th>Club</th>
+            <th>Played</th>
+            <th>Points</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td style="text-align: left;">Inter Caves</td><td>6</td><td>18</td></tr>
-          <tr><td>2</td><td style="text-align: left;">FC Sports</td><td>6</td><td>13</td></tr>
-          <tr><td>3</td><td style="text-align: left;">Raja FC</td><td>4</td><td>11</td></tr>
-          <tr><td>4</td><td style="text-align: left;">NASSS RAJA</td><td>4</td><td>11</td></tr>
-          <tr><td>5</td><td style="text-align: left;">Eagle</td><td>5</td><td>10</td></tr>
-          <tr><td>6</td><td style="text-align: left;">Noclip</td><td>3</td><td>10</td></tr>
+          <tr>
+            <td>1</td>
+            <td style="text-align:left;">Inter Caves</td>
+            <td>7</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td style="text-align:left;">Noclip</td>
+            <td>5</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td style="text-align:left;">Raja FC</td>
+            <td>5</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td style="text-align:left;">FC Sports</td>
+            <td>7</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td style="text-align:left;">NASSS RAJA</td>
+            <td>5</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td style="text-align:left;">Eagle</td>
+            <td>6</td>
+            <td>11</td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section style="animation-delay: 0.3s;">
-  <div class="container">
-    <h2 class="title">Cfa Leaders</h2>
-    <div class="leaders-grid">
-      <div class="leader-card">
-        <div class="leader-hero">
-          <div class="big-stat">17</div>
-          <div class="stat-label">Goals</div>
-          <div class="rank-text">1º</div>
-          <div class="player-name-hero">Ashraf</div>
-        </div>
-        <ul class="rank-list">
-          <li class="rank-item"><span>01 ASHRAF</span><span>17</span></li>
-          <li class="rank-item"><span>02 ADAM</span><span>15</span></li>
-          <li class="rank-item"><span>03 ISMAIL</span><span>13</span></li>
-          <li class="rank-item"><span>04 ABDELLATIF</span><span>7</span></li>
-          <li class="rank-item"><span>05 YOUSSEF</span><span>6</span></li>
-        </ul>
-        <a href="#" class="footer-link">All leaders in goals ▸</a>
-      </div>
-
-      <div class="leader-card">
-        <div class="leader-hero">
-          <div class="big-stat">17</div>
-          <div class="stat-label">Shots</div>
-          <div class="rank-text">1º</div>
-          <div class="player-name-hero">Ashraf</div>
-        </div>
-        <ul class="rank-list">
-          <li class="rank-item"><span>01 ASHRAF</span><span>17</span></li>
-          <li class="rank-item"><span>02 ADAM</span><span>15</span></li>
-          <li class="rank-item"><span>03 ISMAIL</span><span>13</span></li>
-          <li class="rank-item"><span>04 OSAMA</span><span>6</span></li>
-          <li class="rank-item"><span>05 AMMAR</span><span>5</span></li>
-        </ul>
-        <a href="#" class="footer-link">All leaders in shots ▸</a>
-      </div>
-
-      <div class="leader-card">
-        <div class="leader-hero">
-          <div class="big-stat">1724</div> 
-          <div class="stat-label">Passes</div>
-          <div class="rank-text">1º</div>
-          <div class="player-name-hero">ADAM</div>
-        </div>
-        <ul class="rank-list">
-          <li class="rank-item"><span>01 ADAM</span><span>1724</span></li>
-          <li class="rank-item"><span>02 Achraf</span><span>1687</span></li>
-          <li class="rank-item"><span>03 ISMAIL</span><span>1611</span></li>
-          <li class="rank-item"><span>04 OSAMA</span><span>1479</span></li>
-          <li class="rank-item"><span>05 ABDELLATIF</span><span>1474</span></li>
-        </ul>
-        <a href="#" class="footer-link">All leaders in passes ▸</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="animation-delay: 0.4s;">
+<section>
   <div class="container">
     <h2 class="title">Fixtures</h2>
     <div class="matches-grid">
       <div class="match-card">
-        <div class="match-top"><span>SAT 28.02</span><span>21:40</span></div>
-        <div class="teams">NASSS RAJA <span class="vs-badge" style="font-size: 0.9rem;">v</span> RAJA FC</div>
-        <div class="footer-btn">Match Center</div>
+        NASSS RAJA vs RAJA FC<br>21:40
       </div>
       <div class="match-card">
-        <div class="match-top"><span>SAT 28.02</span><span>16:30</span></div>
-        <div class="teams">EAGLE <span class="vs-badge" style="font-size: 0.9rem;">v</span> NO CLIP</div>
-        <div class="footer-btn">Match Center</div>
+        EAGLE vs NOCLIP<br>16:30
       </div>
       <div class="match-card">
-        <div class="match-top"><span>SAT 28.02</span><span>17:20</span></div>
-        <div class="teams">FC SPORTS <span class="vs-badge" style="font-size: 0.9rem;">v</span> NO CLIP</div>
-        <div class="footer-btn">Match Center</div>
+        FC SPORTS vs NOCLIP<br>17:20
       </div>
       <div class="match-card">
-        <div class="match-top"><span>SAT 28.02</span><span>20:45</span></div>
-        <div class="teams">Raja Fc <span class="vs-badge" style="font-size: 0.9rem;">v</span> Inter caves</div>
-        <div class="footer-btn">Match Center</div>
+        RAJA FC vs INTER CAVES<br>20:45
       </div>
     </div>
   </div>
